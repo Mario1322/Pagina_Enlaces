@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - BRECHA DETECTADA | Mario De La Rosa</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self' https:;">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0b0f1a;
+            --gold: #d4a63a;
+            --red: #ff4d4d;
+            --text: #e8ebf3;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+        .container {
+            padding: 2rem;
+            border: 1px solid var(--gold);
+            background: rgba(212, 166, 58, 0.05);
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            color: var(--red);
+            text-shadow: 0 0 10px var(--red);
+        }
+        h2 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gold);
+            color: var(--bg);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+        .glitch {
+            position: relative;
+            animation: glitch 2s infinite;
+        }
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="glitch">404</h1>
+        <h2>[!] ERROR DE RESOLUCIÓN [!]</h2>
+        <p>El recurso solicitado ha sido ofuscado o no existe en este segmento de la red.</p>
+        <p style="font-size: 0.9rem; opacity: 0.5;">Path: /Users/system/hidden_data_not_found.sh</p>
+        <a href="/" class="btn"><i class="bx bx-home"></i> REGRESAR A PUERTO SEGURO</a>
+    </div>
+
+    <script>
+        // Efecto hacker en consola al llegar aquí
+        console.warn("[ALERTA] Intento de acceso a ruta no autorizada detectado.");
+        console.log("%c IP ORIGEN: RESTRINGIDA | ESTADO: BLOQUEADO", "color: #ff4d4d; font-weight: bold;");
+    </script>
+</body>
+</html>
