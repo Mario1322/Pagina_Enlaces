@@ -4,19 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mario De La Rosa - Enlaces</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://unpkg.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https:;">
+    <link rel="canonical" href="https://mario1322.github.io/enlaces/" />
+    <meta name="description" content="Enlaces oficiales de Mario De La Rosa García: Portafolio Web, GitHub, LinkedIn, proyectos y herramientas." />
+    <meta property="og:title" content="Mario De La Rosa García - Enlaces" />
+    <meta property="og:description" content="Enlaces oficiales y consola de seguridad de Mario De La Rosa." />
+    <meta property="og:image" content="https://mario1322.github.io/imagenes/senor-licenciado-660.webp" />
+    <meta property="og:type" content="website" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" integrity="sha384-42kyIPf7HDYLkGffmxDhSx/3Z/53wGBs3nD6wEFxsbeDc7rMO6mkYbkAcpRsnMU2" crossorigin="anonymous">
+    
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="imagenes/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0b0f1a" />
+    
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/particles.js" defer></script>
+    <script src="js/terminal.js" defer></script>
+    <link rel="stylesheet" href="css/terminal.css" />
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Mario De La Rosa García",
+        "jobTitle": "Software Developer and Cybersecurity Specialist",
+        "image": "https://mario1322.github.io/imagenes/senor-licenciado-660.webp",
+        "sameAs": [
+          "https://github.com/Mario1322",
+          "https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153"
+        ]
+      }
+    }
+    </script>
     
     <style>
         :root {
-            --bg-color: #08080c;
-            --card-bg: rgba(18, 18, 24, 0.8);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent-color: #00ffcc; /* Color neón característico de tu estilo tech */
-            --accent-glow: rgba(0, 255, 204, 0.15);
-            --grid-color: rgba(255, 255, 255, 0.02);
+            /* Modo Claro (Predeterminado) */
+            --bg-start: #ffffff;
+            --bg-middle: #dbe6ff;
+            --bg-end: #4563a3;
+            --card-bg: rgba(255, 255, 255, 0.72);
+            --card-border: rgba(212, 166, 58, 0.35);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --accent-color: #b88a1a; /* Contraste WCAG para fondos claros */
+            --accent-glow: rgba(184, 138, 26, 0.2);
+            --particle-color: #355291;
+            --surface-card: rgba(0, 0, 0, 0.04);
+            --arrow-color: #475569;
+        }
+
+        :root.cambiocolor {
+            /* Modo Oscuro (cambiocolor) */
+            --bg-start: #4563a3;
+            --bg-middle: #1c2a52;
+            --bg-end: #0b0f1a;
+            --card-bg: rgba(15, 22, 38, 0.84);
+            --card-border: rgba(212, 166, 58, 0.42);
+            --text-main: #e8ebf3;
+            --text-muted: #b7bfce;
+            --accent-color: #d4a63a;
+            --accent-glow: rgba(212, 166, 58, 0.3);
+            --particle-color: #b9d2ff;
+            --surface-card: rgba(255, 255, 255, 0.06);
+            --arrow-color: #b7bfce;
         }
 
         * {
@@ -25,32 +86,108 @@
             padding: 0;
         }
 
+        html {
+            background: radial-gradient(circle at top right, var(--bg-start) 0%, var(--bg-middle) 40%, var(--bg-end) 100%);
+            min-height: 100%;
+            transition: background 0.3s ease;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Archivo', sans-serif;
+            background: transparent;
             color: var(--text-main);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 40px 20px;
-            overflow-x: hidden;
+            overflow: hidden;
             position: relative;
+            transition: color 0.3s ease;
         }
 
-        /* Fondo de cuadrícula idéntico al de la imagen */
+        /* Accesibilidad y PWA */
+        .skip-link {
+            position: fixed;
+            top: 1.2rem;
+            left: 1.2rem;
+            padding: 1rem 1.4rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #0f172a;
+            background: #d4a63a;
+            transform: translateY(-180%);
+            transition: transform 0.2s ease;
+            z-index: 3000;
+        }
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible,
+        select:focus-visible {
+            outline: 2px solid #d4a63a;
+            outline-offset: 3px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 35px;
+            list-style: none; /* Eliminar viñetas */
+        }
+
+        .update-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(15, 22, 38, 0.95);
+            border: 1px solid var(--accent-color);
+            color: #e8ebf3; /* Texto claro legible sobre fondo oscuro del banner */
+            padding: 12px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateY(150%);
+            transition: transform 0.3s ease;
+            font-size: 0.85rem;
+        }
+        .update-banner.is-visible {
+            transform: translateY(0);
+        }
+        .update-btn {
+            background: var(--accent-color);
+            color: #0b0f1a;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .update-btn:hover {
+            background: #fff;
+        }
+
         body::before {
             content: "";
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: center;
+            background:
+                radial-gradient(circle at 18% 20%, rgba(212, 166, 58, 0.12), transparent 28%),
+                radial-gradient(circle at 82% 72%, rgba(185, 210, 255, 0.08), transparent 30%);
+            pointer-events: none;
             z-index: -1;
         }
 
@@ -65,7 +202,12 @@
             text-align: center;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.42),
+                0 0 0 1px rgba(212, 166, 58, 0.08),
+                0 0 24px rgba(212, 166, 58, 0.08);
+            backface-visibility: hidden;
+            transform: translate3d(0, 0, 0);
         }
 
         /* Header: Foto y Perfil */
@@ -75,7 +217,8 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
-            border: 2px solid var(--card-border);
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 0 20px rgba(212, 166, 58, 0.18);
         }
 
         .tags {
@@ -116,7 +259,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 255, 255, 0.02);
+            background: var(--surface-card);
             border: 1px solid var(--card-border);
             border-radius: 14px;
             padding: 18px 24px;
@@ -127,7 +270,7 @@
         }
 
         .link-item:hover {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.09);
             border-color: var(--accent-color);
             box-shadow: 0 0 20px var(--accent-glow);
             transform: translateY(-2px);
@@ -164,7 +307,7 @@
 
         .arrow-icon {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--arrow-color);
             transition: transform 0.25s ease;
         }
 
@@ -203,71 +346,127 @@
                 gap: 14px;
             }
         }
+
+        canvas {
+            display: block;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content" data-i18n-key="skipLink">Saltar al contenido principal</a>
+    <div id="particles-js" class="particle-wrapper"></div>
+    
+    <main class="bio-container" id="main-content">
+        <header>
+            <img src="imagenes/senor-licenciado-660.webp" alt="Mario De La Rosa" class="profile-img" fetchpriority="high" decoding="async" onerror="this.src='https://via.placeholder.com/150'">
+            <div class="tags" data-i18n-key="tags">Desarrollo · Ciberseguridad · Automatización</div>
+            <h1 class="name">Mario De La Rosa</h1>
+            <p class="description" data-i18n-key="description">
+                Desarrollador de aplicaciones multiplataforma y especialista en ciberseguridad. Creando soluciones eficientes y automatizaciones inteligentes.
+            </p>
+        </header>
 
-    <div class="bio-container">
-        <img src="imagenes/senor-licenciado-660.webp" alt="Mario De La Rosa" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
-        
-        <div class="tags">Desarrollo · Ciberseguridad · Automatización</div>
-        
-        <h1 class="name">Mario De La Rosa</h1>
-        
-        <p class="description">
-            Desarrollador de aplicaciones multiplataforma y especialista en ciberseguridad. Creando soluciones eficientes y automatizaciones inteligentes.
-        </p>
+        <section aria-label="Listado de enlaces">
+            <ul class="links-list">
+                <li>
+                    <a href="https://mario1322.github.io/" target="_blank" rel="noopener" class="link-item">
+                        <div class="link-content">
+                            <i class="fa-solid fa-briefcase link-icon"></i>
+                            <div class="link-info">
+                                <span class="link-title" data-i18n-key="portfolioTitle">Portafolio Web</span>
+                                <span class="link-subtitle" data-i18n-key="portfolioSubtitle">Explora mis proyectos y experiencia</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                    </a>
+                </li>
 
-        <div class="links-list">
+                <li>
+                    <a href="https://github.com/mario1322" target="_blank" rel="noopener" class="link-item">
+                        <div class="link-content">
+                            <i class="fa-brands fa-github link-icon"></i>
+                            <div class="link-info">
+                                <span class="link-title" data-i18n-key="githubTitle">GitHub</span>
+                                <span class="link-subtitle" data-i18n-key="githubSubtitle">Revisa mis repositorios y código fuente</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                    </a>
+                </li>
 
-            <a href="https://mario1322.github.io/" target="_blank" class="link-item">
-                <div class="link-content">
-                    <i class="fa-solid fa-briefcase link-icon"></i>
-                    <div class="link-info">
-                        <span class="link-title">Portafolio Web</span>
-                        <span class="link-subtitle">Explora mis proyectos y experiencia</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-right arrow-icon"></i>
-            </a>
+                <li>
+                    <a href="https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank" rel="noopener" class="link-item">
+                        <div class="link-content">
+                            <i class="fa-brands fa-linkedin-in link-icon"></i>
+                            <div class="link-info">
+                                <span class="link-title" data-i18n-key="linkedinTitle">LinkedIn</span>
+                                <span class="link-subtitle" data-i18n-key="linkedinSubtitle">Conectemos profesionalmente</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                    </a>
+                </li>
 
-            <a href="https://github.com/mario1322" target="_blank" class="link-item">
-                <div class="link-content">
-                    <i class="fa-brands fa-github link-icon"></i>
-                    <div class="link-info">
-                        <span class="link-title">GitHub</span>
-                        <span class="link-subtitle">Revisa mis repositorios y código fuente</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-right arrow-icon"></i>
-            </a>
+                <li>
+                    <a href="https://github.com/Mario1322/Armario_Digital" target="_blank" rel="noopener" class="link-item">
+                        <div class="link-content">
+                            <i class="fa-solid fa-mobile-screen-button link-icon"></i>
+                            <div class="link-info">
+                                <span class="link-title" data-i18n-key="armarioTitle">Mi Armario Digital</span>
+                                <span class="link-subtitle" data-i18n-key="armarioSubtitle">Conoce el desarrollo de mi aplicación móvil</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                    </a>
+                </li>
 
-            <a href="https://www.linkedin.com/in/mario-de-la-rosa-garcía-866b07153" target="_blank" class="link-item">
-                <div class="link-content">
-                    <i class="fa-brands fa-linkedin-in link-icon"></i>
-                    <div class="link-info">
-                        <span class="link-title">LinkedIn</span>
-                        <span class="link-subtitle">Conectemos profesionalmente</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-right arrow-icon"></i>
-            </a>
+                <li>
+                    <a href="https://saucorp.es/viaje2026/index.html" target="_blank" rel="noopener" class="link-item">
+                        <div class="link-content">
+                            <i class="fa-solid fa-mobile-screen-button link-icon"></i>
+                            <div class="link-info">
+                                <span class="link-title" data-i18n-key="viajeTitle">Viaje 2026</span>
+                                <span class="link-subtitle" data-i18n-key="viajeSubtitle">Planing del viaje</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                    </a>
+                </li>
 
-            <a href="https://github.com/Mario1322/Armario_Digital" target="_blank" class="link-item">
-                <div class="link-content">
-                    <i class="fa-solid fa-mobile-screen-button link-icon"></i>
-                    <div class="link-info">
-                        <span class="link-title">Mi Armario Digital</span>
-                        <span class="link-subtitle">Conoce el desarrollo de mi aplicación móvil</span>
-                    </div>
-                </div>
-                <i class="fa-solid fa-arrow-right arrow-icon"></i>
-            </a>
+                <li>
+                    <a href="https://saucorp.es/mama/index.html" target="_blank" rel="noopener" class="link-item">
+                        <div class="link-content">
+                            <i class="fa-solid fa-mobile-screen-button link-icon"></i>
+                            <div class="link-info">
+                                <span class="link-title" data-i18n-key="motherTitle">Dia De La Madre</span>
+                                <span class="link-subtitle" data-i18n-key="motherSubtitle">Dia de la madre</span>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-arrow-right arrow-icon"></i>
+                    </a>
+                </li>
+            </ul>
+        </section>
 
-        </div>
+        <footer>
+            <a href="mailto:mdlrg1322@gmail.com" class="footer-email" data-i18n-key="emailText">Escríbeme a mi Email</a>
+        </footer>
+    </main>
 
-        <a href="mailto:mdlrg1322@gmail.com" class="footer-email">Escríbeme a mi Email</a>
+    <div id="update-banner" class="update-banner">
+        <span data-i18n-key="updateText">Nueva versión disponible offline.</span>
+        <button id="update-reload" class="update-btn" data-i18n-key="updateBtn">Actualizar</button>
     </div>
-
 </body>
 </html>
